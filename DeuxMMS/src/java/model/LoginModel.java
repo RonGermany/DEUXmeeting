@@ -6,21 +6,30 @@
 package model;
 
 import database.DBHandler;
+import java.sql.SQLException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 /**
  *
  * @author Jess
  */
-public class LoginModel {
-    DBHandler dbHandler = new DBHandler();
+public class LoginModel{
     
+    public DBHandler dbHandler;
+
     private String cMessage = "Successful Login";
     private String uMessage = "Invalid Credentials";
     private User user = new User();
     private boolean confirm = false;
     
     //constructor
-    public LoginModel(){
+    public LoginModel() throws InstantiationException, IllegalAccessException{
+        try {
+            dbHandler = new DBHandler();
+        } catch (SQLException ex) {
+            Logger.getLogger(LoginModel.class.getName()).log(Level.SEVERE, null, ex);
+        }
         
     }
     
@@ -35,15 +44,12 @@ public class LoginModel {
     
     public String confirmLogin(String email, String pass){
         String type;
-        while(true){
             if(authenticateLogin(email, pass)){
                 type = dbHandler.getUserType(email);
-                break;
             }
             else{
                 type = "INVALID";
             }
-        }
         return type;
     }
 }

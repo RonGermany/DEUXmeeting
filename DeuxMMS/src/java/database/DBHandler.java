@@ -12,23 +12,30 @@ import java.sql.*;
  */
 public class DBHandler {
     
-    private static final String DB_URL = "jdbc:derby://localhost:1527/DeuxMMSDB";
-    private static Connection conn = null;
+    private static final String DBURL = "jdbc:derby:C:/Derby/DeuxMMS";
+    private Connection conn;
     private static Statement stmt = null;
     private String TableName = "";
     private static boolean status = false;
     
-    public DBHandler(){
-        createConnection();
+    public DBHandler() throws SQLException, InstantiationException, IllegalAccessException {
+        try {
+            Class.forName("org.apache.derby.jdbc.EmbeddedDriver").newInstance();
+        } catch (ClassNotFoundException e) {
+            //handle exception
+        }
+        this.conn = DriverManager.getConnection(DBURL);
+        //createConnection();
     }
 
-    private void createConnection() {
-        try{
-            conn = DriverManager.getConnection(DB_URL);
-        }catch (Exception e){
-            e.printStackTrace();
-        }
-    }
+//    private void createConnection(){
+//        try{
+//            conn = DriverManager.getConnection(DBURL);
+//            System.out.println("I made it to DB");
+//        }catch (Exception e){
+//            e.printStackTrace();
+//        }
+//    }
     //Function that executes a SELECT query and returns the requested values/data from the database
     public ResultSet executeQuery(String query) {
         ResultSet result;
@@ -64,55 +71,57 @@ public class DBHandler {
     //Get user name from database by using login information. This will carry throughout the session for ID purposes.
     //This is how a typical query should look...
     
-    public String getUserName(String email){
+    public String getUserName(String email) {
         String name = "";
         String nameQuery = "SELECT NAME "
                 + "FROM USERS "
                 + "WHERE EMAIL= '" + email + "'";
         ResultSet rs = executeQuery(nameQuery);
-        try{
-            while(rs.next()){
+        try {
+            while (rs.next()) {
                 name = rs.getString("NAME");
             }
-        }catch(SQLException e){
-            
+        } catch (SQLException e) {
+
         }
         return name;
     }
-    
-    public String getUserType(String email){
+
+    public String getUserType(String email) {
         String type = "";
         String typeQuery = "SELECT TYPE "
                 + "FROM USERS "
                 + "WHERE EMAIL= '" + email + "'";
         ResultSet rs = executeQuery(typeQuery);
-        try{
-            while(rs.next()){
+        try {
+            while (rs.next()) {
                 type = rs.getString("TYPE");
             }
-        }catch(SQLException e){
-            
+        } catch (SQLException e) {
+
         }
         return type;
     }
-    
-    public boolean authenticateUser(String email, String pass){
+
+    public boolean authenticateUser(String email, String pass) {
         String user = "";
         String password = "";
-        String authenticateUser = "SELECT EMAIL, PASS FROM USERS WHERE EMAIL = '" + email + "'";
-        
-        ResultSet res = executeQuery(authenticateUser);
-        try{
-            while(res.next()){
+        String checkUser = "SELECT EMAIL, PASSWORD FROM USERS WHERE EMAIL= '" + email + "'";
+
+        ResultSet res = executeQuery(checkUser);
+        try {
+            while (res.next()) {
                 user = res.getString("EMAIL");
-                password = res.getString("PASS");
-                if(user.equals(email) && password.equals(pass))
+                password = res.getString("PASSWORD");
+                if (user.equals(email) && password.equals(pass)) {
                     status = true;
-                else
+                } else {
                     status = false;
+                }
             }
-        }catch (SQLException ex){
+        } catch (SQLException ex) {
             System.out.println("Error authenticating user.");
+            System.out.println("I am coming from here");
         }
         return status;
     }
@@ -120,7 +129,7 @@ public class DBHandler {
     /*two methods to create users*/
     public void createAminUser(String name, String email, String pass, String address, String phone, String ccNum, String exp, String ccv){
         String meeting = "";    //default place holder
-        String insertAdmin = "INSERT INTO APP.USERS VALUES ('" + email + "', '" + "A" + "', '" + address + "', '" + phone + "', '" + exp + "', '" + ccv + "', " + meeting + "', " + name + "'," + phone + "'," + "'" + pass + "'" + ")"; 
+        String insertAdmin = "INSERT INTO APP.USERS VALUES ('" + email + "', '" + pass + "', '" + name + "', '" + address + "', '" + phone + "', '" + "A" + "', " + ccNum + "', " + exp + "'," + ccv + "'," + "'" + meeting + "'" + ")"; 
     
         if(executeAction(insertAdmin)){
             //do something to let user know successful
@@ -129,7 +138,7 @@ public class DBHandler {
     
     public void createClientUser(String name, String email, String pass, String address, String phone, String ccNum, String exp, String ccv){
         String meeting = "";    //default place holder
-        String insertClient = "INSERT INTO APP.USERS VALUES ('" + email + "', '" + "C" + "', '" + address + "', '" + phone + "', '" + exp + "', '" + ccv + "', " + meeting + "', " + name + "'," + phone + "'," + "'" + pass + "'" + ")";
+        String insertClient = "INSERT INTO APP.USERS VALUES ('" + email + "', '" + pass + "', '" + name + "', '" + address + "', '" + phone + "', '" + "C" + "', " + ccNum + "', " + exp + "'," + ccv + "'," + "'" + meeting + "'" + ")";
     
         if(executeAction(insertClient)){
             //do something to let user know successful
