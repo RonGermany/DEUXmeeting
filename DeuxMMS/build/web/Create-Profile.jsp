@@ -63,7 +63,7 @@
       <div class="u-clearfix u-sheet u-sheet-1">
         <h1 class="u-text u-text-default u-text-1">CREATE PROFILE</h1>
         <div class="u-form u-form-1">
-          <form action="#" method="POST" class="u-clearfix u-form-custom-backend u-form-spacing-10 u-form-vertical u-inner-form" source="custom" name="form" style="padding: 10px;">
+          <form action="profile" method="post" class="u-clearfix u-form-custom-backend u-form-spacing-10 u-form-vertical u-inner-form" source="custom" name="form" style="padding: 10px;">
             <div class="u-form-group u-form-name">
               <label for="name-d4df" class="u-form-control-hidden u-label"></label>
               <input type="text" placeholder="Enter your Name" id="name-d4df" name="name" class="u-border-1 u-border-grey-30 u-input u-input-rectangle u-white" required="">
@@ -78,11 +78,11 @@
             </div>
             <div class="u-form-group u-form-group-4">
               <label for="text-41e9" class="u-form-control-hidden u-label"></label>
-              <input type="text" placeholder="Enter password" id="text-41e9" name="text-3" class="u-border-1 u-border-grey-30 u-input u-input-rectangle u-white">
+              <input type="text" placeholder="Enter password" id="text-41e9" name="pass" class="u-border-1 u-border-grey-30 u-input u-input-rectangle u-white" required="">
             </div>
             <div class="u-form-group u-form-group-5">
               <label for="text-f881" class="u-form-control-hidden u-label"></label>
-              <input type="text" placeholder="Confirm password" id="text-f881" name="text-4" class="u-border-1 u-border-grey-30 u-input u-input-rectangle u-white">
+              <input type="text" placeholder="Confirm password" id="text-f881" name="pass-1" class="u-border-1 u-border-grey-30 u-input u-input-rectangle u-white" required="">
             </div>
             <div class="u-form-address u-form-group u-form-group-6">
               <label for="address-4f5f" class="u-form-control-hidden u-label"></label>
@@ -94,15 +94,15 @@
             </div>
             <div class="u-form-group u-form-group-8">
               <label for="text-a564" class="u-form-control-hidden u-label"></label>
-              <input type="text" placeholder="Credit Card Number" id="text-a564" name="text" class="u-border-1 u-border-grey-30 u-input u-input-rectangle u-white">
+              <input type="text" placeholder="Credit Card Number" id="text-a564" name="ccnum" class="u-border-1 u-border-grey-30 u-input u-input-rectangle u-white">
             </div>
             <div class="u-form-group u-form-group-9">
               <label for="text-9ec8" class="u-form-control-hidden u-label"></label>
-              <input type="text" placeholder="Expiration Date" id="text-9ec8" name="text-1" class="u-border-1 u-border-grey-30 u-input u-input-rectangle u-white">
+              <input type="text" placeholder="Expiration Date" id="text-9ec8" name="ccexp" class="u-border-1 u-border-grey-30 u-input u-input-rectangle u-white">
             </div>
             <div class="u-form-group u-form-group-10">
               <label for="text-0a54" class="u-form-control-hidden u-label"></label>
-              <input type="text" placeholder="CCV" id="text-0a54" name="text-2" class="u-border-1 u-border-grey-30 u-input u-input-rectangle u-white">
+              <input type="text" placeholder="CCV" id="text-0a54" name="ccv" class="u-border-1 u-border-grey-30 u-input u-input-rectangle u-white">
             </div>
             <div class="u-align-left u-form-group u-form-submit">
               <a href="#" class="u-btn u-btn-submit u-button-style">Submit</a>

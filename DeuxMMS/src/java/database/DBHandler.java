@@ -135,12 +135,8 @@ public class DBHandler {
         stmt.executeUpdate(query);            
     }
     
-    public void createClientUser(String name, String email, String pass, String address, String phone, String ccNum, String exp, String ccv){
-        String meeting = "";    //default place holder
-        String insertClient = "INSERT INTO USERS VALUES ('" + email + "', '" + pass + "', '" + name + "', '" + address + "', '" + phone + "', '" + "C" + "', " + ccNum + "', " + exp + "'," + ccv + "'," + "'" + meeting + "'" + ")";
-    
-        if(executeAction(insertClient)){
-            //do something to let user know successful
-        }
+    public void createClientUser(String query) throws SQLException{
+        stmt = conn.createStatement();
+        stmt.executeUpdate(query); 
     }
 }
