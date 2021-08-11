@@ -115,14 +115,14 @@
 </g></svg></span>
                       <h3 class="u-custom-font u-font-pt-sans u-text u-text-body-color u-text-default u-text-7">File Complaint</h3>
                       <div class="u-form u-form-1">
-                        <form action="complaint" method="post" class="u-clearfix u-form-custom-backend u-form-spacing-10 u-form-vertical u-inner-form" source="custom" name="form" style="padding: 10px;">
+                        <form action="filecomplaint" method="post" class="u-clearfix u-form-custom-backend u-form-spacing-10 u-form-vertical u-inner-form" source="custom" name="form" style="padding: 10px;">
                           <div class="u-form-group u-form-name">
                             <label for="name-94df" class="u-form-control-hidden u-label"></label>
                             <input type="text" placeholder="Enter your Name" id="name-94df" name="name" class="u-border-1 u-border-grey-30 u-input u-input-rectangle u-white" required="">
                           </div>
                           <div class="u-form-email u-form-group">
                             <label for="email-94df" class="u-form-control-hidden u-label"></label>
-                            <input type="email" placeholder="Enter a valid email address" id="email-94df" name="email" class="u-border-1 u-border-grey-30 u-input u-input-rectangle u-white" required="">
+                            <input type="text" placeholder="Enter a valid email address" id="email-94df" name="email" class="u-border-1 u-border-grey-30 u-input u-input-rectangle u-white" required="">
                           </div>
                           <div class="u-form-group u-form-message">
                             <label for="message-94df" class="u-form-control-hidden u-label"></label>

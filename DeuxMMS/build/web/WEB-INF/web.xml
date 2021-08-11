@@ -12,17 +12,25 @@
         <servlet-name>profile</servlet-name>
         <servlet-class>controller.profile</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>editprofile</servlet-name>
+        <servlet-class>controller.editprofile</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>grabprofile</servlet-name>
+        <servlet-class>controller.grabprofile</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>filecomplaint</servlet-name>
+        <servlet-class>controller.filecomplaint</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>showcomplaint</servlet-name>
+        <servlet-class>controller.showcomplaint</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>admin</servlet-name>
         <url-pattern>/admin</url-pattern>
-    </servlet-mapping>
-    <servlet>
-        <servlet-name>complaint</servlet-name>
-        <servlet-class>controller.complaint</servlet-class>
-    </servlet>
-    <servlet-mapping>
-        <servlet-name>complaint</servlet-name>
-        <url-pattern>/complaint</url-pattern>
     </servlet-mapping>
     <servlet>
         <servlet-name>login</servlet-name>
@@ -47,6 +55,22 @@
     <servlet-mapping>
         <servlet-name>profile</servlet-name>
         <url-pattern>/profile</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>editprofile</servlet-name>
+        <url-pattern>/editprofile</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>grabprofile</servlet-name>
+        <url-pattern>/grabprofile</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>filecomplaint</servlet-name>
+        <url-pattern>/filecomplaint</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>showcomplaint</servlet-name>
+        <url-pattern>/showcomplaint</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>

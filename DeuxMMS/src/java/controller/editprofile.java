@@ -21,36 +21,28 @@ import model.AccountModel;
  *
  * @author Jess
  */
-public class profile extends HttpServlet {
-
-    public profile(){
+public class editprofile extends HttpServlet {
+    
+    public editprofile(){
         super();
     }
-    
+
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
-            throws ServletException, IOException, InstantiationException, IllegalAccessException, SQLException, InterruptedException {
+            throws ServletException, IOException, SQLException, InterruptedException {
         AccountModel am = new AccountModel();
         
         String _name = request.getParameter("name");
         String _email = request.getParameter("email");
-        String _email1 = request.getParameter("email-1");
-        String _pass = request.getParameter("pass");
-        String _pass1 = request.getParameter("pass-1");
         String _address = request.getParameter("address");
         String _phone = request.getParameter("phone");
-        String _ccnum = request.getParameter("ccnum");
-        String _ccexp = request.getParameter("ccexp");
-        String _ccv = request.getParameter("ccv");
         
         response.setContentType("text/html;charset=UTF-8");
         try ( PrintWriter out = response.getWriter()) {
-            if(_name != null && _email != null && _pass != null && _address != null && _phone != null){
-                if(_email.equals(_email1) && _pass.equals(_pass1)){
-                    am.addUser(_email, _pass, _name, _address, _phone, _ccnum, _ccexp, _ccv);
-                    TimeUnit.SECONDS.sleep(5);
-                    response.sendRedirect("index.jsp");
-                }
-            }
+            if(_name != null){
+                am.editUser(_name, _email, _address, _phone);
+                TimeUnit.SECONDS.sleep(5);
+                response.sendRedirect("Admin-Dashboard.jsp");
+                }       
         }
     }
 
@@ -59,8 +51,8 @@ public class profile extends HttpServlet {
             throws ServletException, IOException {
         try {
             processRequest(request, response);
-        } catch (InstantiationException | IllegalAccessException | SQLException | InterruptedException ex) {
-            Logger.getLogger(profile.class.getName()).log(Level.SEVERE, null, ex);
+        } catch (SQLException | InterruptedException ex) {
+            Logger.getLogger(editprofile.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
 
@@ -69,8 +61,8 @@ public class profile extends HttpServlet {
             throws ServletException, IOException {
         try {
             processRequest(request, response);
-        } catch (InstantiationException | IllegalAccessException | SQLException | InterruptedException ex) {
-            Logger.getLogger(profile.class.getName()).log(Level.SEVERE, null, ex);
+        } catch (SQLException | InterruptedException ex) {
+            Logger.getLogger(editprofile.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
 

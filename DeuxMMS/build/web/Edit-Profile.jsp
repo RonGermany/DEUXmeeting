@@ -63,35 +63,43 @@
       <div class="u-clearfix u-sheet u-sheet-1">
         <h1 class="u-text u-text-default u-text-1">EDIT PROFILE</h1>
         <div class="u-form u-form-1">
-          <form action="#" method="POST" class="u-clearfix u-form-custom-backend u-form-spacing-10 u-form-vertical u-inner-form" source="custom" name="form" style="padding: 10px;">
-            <div class="u-form-group u-form-name">
-              <label for="name-d4df" class="u-form-control-hidden u-label"></label>
-              <input type="text" placeholder="Enter your Name" id="name-d4df" name="name" class="u-border-1 u-border-grey-30 u-input u-input-rectangle u-white" required="">
-            </div>
+          <form action="grabprofile" method="post" class="u-clearfix u-form-custom-backend u-form-spacing-10 u-form-vertical u-inner-form" source="custom" name="form" style="padding: 10px;">
+            <p>Enter email for verification purposes:</p>  
             <div class="u-form-email u-form-group">
               <label for="email-d4df" class="u-form-control-hidden u-label"></label>
-              <input type="email" placeholder="Enter a valid email address" id="email-d4df" name="email" class="u-border-1 u-border-grey-30 u-input u-input-rectangle u-white" required="">
+              <input type="text" placeholder="Enter a valid email address" id="email-d4df" name="email" class="u-border-1 u-border-grey-30 u-input u-input-rectangle u-white" required="">
+            </div>
+            <div class="u-align-left u-form-group u-form-submit">
+              <a href="#" class="u-btn u-btn-submit u-button-style">Submit</a>
+              <input type="submit" value="submit" class="u-form-control-hidden">
+            </div>
+          </form>
+            <form action="editprofile" method="post" class="u-clearfix u-form-custom-backend u-form-spacing-10 u-form-vertical u-inner-form" source="custom" name="form1" style="padding: 10px;">            
+              <p>You may edit contact information here:</p>
+              <div class="u-form-group u-form-name">
+              <label for="name-d4df" class="u-form-control-hidden u-label"></label>
+              <input type="text" placeholder="Enter your Name" id="name-d4df" name="name" class="u-border-1 u-border-grey-30 u-input u-input-rectangle u-white">
             </div>
             <div class="u-form-address u-form-group u-form-group-3">
               <label for="address-4f5f" class="u-form-control-hidden u-label"></label>
-              <input type="text" placeholder="Enter your address" id="address-4f5f" name="address" class="u-border-1 u-border-grey-30 u-input u-input-rectangle u-white" required="">
+              <input type="text" placeholder="Enter your address" id="address-4f5f" name="address" class="u-border-1 u-border-grey-30 u-input u-input-rectangle u-white">
             </div>
             <div class="u-form-group u-form-phone u-form-group-4">
               <label for="phone-7256" class="u-form-control-hidden u-label"></label>
-              <input type="tel" pattern="\+?\d{0,3}[\s\(\-]?([0-9]{2,3})[\s\)\-]?([\s\-]?)([0-9]{3})[\s\-]?([0-9]{2})[\s\-]?([0-9]{2})" placeholder="Enter your phone (e.g. +14155552675)" id="phone-7256" name="phone" class="u-border-1 u-border-grey-30 u-input u-input-rectangle u-white" required="">
+              <input type="tel" pattern="\+?\d{0,3}[\s\(\-]?([0-9]{2,3})[\s\)\-]?([\s\-]?)([0-9]{3})[\s\-]?([0-9]{2})[\s\-]?([0-9]{2})" placeholder="Enter your phone (e.g. 4155552675)" id="phone-7256" name="phone" class="u-border-1 u-border-grey-30 u-input u-input-rectangle u-white">
             </div>
             <div class="u-form-group u-form-group-5">
               <label for="text-a564" class="u-form-control-hidden u-label"></label>
-              <input type="text" placeholder="Credit Card Number" id="text-a564" name="text" class="u-border-1 u-border-grey-30 u-input u-input-rectangle u-white">
+              <input type="text" placeholder="Credit Card Number" id="text-a564" name="ccNum" class="u-border-1 u-border-grey-30 u-input u-input-rectangle u-white">
             </div>
             <div class="u-form-group u-form-group-6">
               <label for="text-9ec8" class="u-form-control-hidden u-label"></label>
-              <input type="text" placeholder="Expiration Date" id="text-9ec8" name="text-1" class="u-border-1 u-border-grey-30 u-input u-input-rectangle u-white">
+              <input type="text" placeholder="Expiration Date" id="text-9ec8" name="ccExp" class="u-border-1 u-border-grey-30 u-input u-input-rectangle u-white">
             </div>
             <div class="u-form-group u-form-group-7">
               <label for="text-0a54" class="u-form-control-hidden u-label"></label>
-              <input type="text" placeholder="CCV" id="text-0a54" name="text-2" class="u-border-1 u-border-grey-30 u-input u-input-rectangle u-white">
-            </div>
+              <input type="text" placeholder="CCV" id="text-0a54" name="ccv" class="u-border-1 u-border-grey-30 u-input u-input-rectangle u-white">
+            </div>              
             <div class="u-align-left u-form-group u-form-submit">
               <a href="#" class="u-btn u-btn-submit u-button-style">Submit</a>
               <input type="submit" value="submit" class="u-form-control-hidden">

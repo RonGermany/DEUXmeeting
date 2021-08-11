@@ -15,8 +15,16 @@ import java.util.logging.Logger;
  * @author Jess
  */
 public class User {
-    public DBHandler dbHandler;
+    private DBHandler dbHandler;
 
+    public String name;
+    private String password;
+    public String address;
+    public String phone;
+    public String ccNum;
+    public String ccExp;
+    public String ccv;
+    
     private String user = "";
     private char type = 'B';
     
@@ -38,16 +46,6 @@ public class User {
             this.user = "Client";
         
         return user;
-    }
-    
-    public void addUser(String email, String password, String name, String address, String phone, String ccNum, String ccExp, String ccv) throws SQLException{
-        String type = "C";
-        String meeting = "";
-        String addUserQuery = "INSERT INTO USERS (EMAIL, PASSWORD, NAME, ADDRESS, PHONE, TYPE, CCNUM, CCEXP, CCV, MEETINGS) VALUES "
-                + "('" + email + "', '" + password + "', '" + name + "', '" + address
-                + "', '" + phone + "', '" + type + "', '" + ccNum + "', '" + ccExp
-                + "', '" + ccv + "', '" + meeting + "'" + ")";
-        dbHandler.createClientUser(addUserQuery);
     }
 }
 

@@ -6,6 +6,10 @@
 package database;
 
 import java.sql.*;
+import java.util.ArrayList;
+import java.util.List;
+import model.Complaint;
+import model.User;
 /**
  *
  * @author Jess
@@ -139,4 +143,47 @@ public class DBHandler {
         stmt = conn.createStatement();
         stmt.executeUpdate(query); 
     }
+    
+    public void editUser(String query) throws SQLException{
+        stmt = conn.createStatement();
+        stmt.executeUpdate(query);
+    }
+    
+    public void fileComplaint(String query) throws SQLException{
+        stmt = conn.createStatement();
+        stmt.executeUpdate(query);
+    }
+    
+    public int getCount(String query) throws SQLException{
+        ResultSet res = executeQuery(query);
+        res.next();
+        int count = res.getInt(1);
+        return count;
+    }
+    public List<User> getUserInfo(String query) throws SQLException{
+        List<User> u = new ArrayList<User>();
+        
+        ResultSet rs = executeQuery(query);
+        while(rs.next()){};
+        return u;
+    }
+    
+    public List<Complaint> getComplaints(String query) throws SQLException{
+        List<Complaint> list = new ArrayList<Complaint>();
+        
+        ResultSet rs = executeQuery(query);
+        
+        while(rs.next()){
+            Complaint c = new Complaint();
+            c.setIDNum(rs.getString("ID"));
+            c.setName(rs.getString("NAME"));
+            c.setEmail(rs.getString("EMAIL"));
+            c.setMessage(rs.getString("MESSAGE"));
+            
+            list.add(c);
+        }
+        return list;
+    }
+    
+    
 }

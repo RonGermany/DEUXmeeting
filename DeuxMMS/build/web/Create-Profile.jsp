@@ -70,11 +70,11 @@
             </div>
             <div class="u-form-email u-form-group">
               <label for="email-d4df" class="u-form-control-hidden u-label"></label>
-              <input type="email" placeholder="Enter a valid email address" id="email-d4df" name="email" class="u-border-1 u-border-grey-30 u-input u-input-rectangle u-white" required="">
+              <input type="text" placeholder="Enter a valid email address" id="email-d4df" name="email" class="u-border-1 u-border-grey-30 u-input u-input-rectangle u-white" required="">
             </div>
             <div class="u-form-email u-form-group u-form-group-3">
               <label for="email-4d4f" class="u-form-control-hidden u-label"></label>
-              <input type="email" placeholder="Confirm email" id="email-4d4f" name="email-1" class="u-border-1 u-border-grey-30 u-input u-input-rectangle u-white" required="">
+              <input type="text" placeholder="Confirm email" id="email-4d4f" name="email-1" class="u-border-1 u-border-grey-30 u-input u-input-rectangle u-white" required="">
             </div>
             <div class="u-form-group u-form-group-4">
               <label for="text-41e9" class="u-form-control-hidden u-label"></label>
@@ -90,7 +90,7 @@
             </div>
             <div class="u-form-group u-form-phone u-form-group-7">
               <label for="phone-7256" class="u-form-control-hidden u-label"></label>
-              <input type="tel" pattern="\+?\d{0,3}[\s\(\-]?([0-9]{2,3})[\s\)\-]?([\s\-]?)([0-9]{3})[\s\-]?([0-9]{2})[\s\-]?([0-9]{2})" placeholder="Enter your phone (e.g. +14155552675)" id="phone-7256" name="phone" class="u-border-1 u-border-grey-30 u-input u-input-rectangle u-white" required="">
+              <input type="tel" pattern="\+?\d{0,3}[\s\(\-]?([0-9]{2,3})[\s\)\-]?([\s\-]?)([0-9]{3})[\s\-]?([0-9]{2})[\s\-]?([0-9]{2})" placeholder="Enter your phone (e.g. 4155552675)" id="phone-7256" name="phone" class="u-border-1 u-border-grey-30 u-input u-input-rectangle u-white" required="">
             </div>
             <div class="u-form-group u-form-group-8">
               <label for="text-a564" class="u-form-control-hidden u-label"></label>
