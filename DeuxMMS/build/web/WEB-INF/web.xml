@@ -4,6 +4,10 @@
         <servlet-name>admin</servlet-name>
         <servlet-class>controller.admin</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>room</servlet-name>
+        <servlet-class>controller.room</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>admin</servlet-name>
         <url-pattern>/admin</url-pattern>
@@ -31,6 +35,10 @@
     <servlet-mapping>
         <servlet-name>meeting</servlet-name>
         <url-pattern>/meeting</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>room</servlet-name>
+        <url-pattern>/room</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>

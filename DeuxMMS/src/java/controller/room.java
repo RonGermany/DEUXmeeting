@@ -15,46 +15,46 @@ import java.sql.SQLException;
 import java.util.concurrent.TimeUnit;
 import java.util.logging.Level;
 import java.util.logging.Logger;
-import model.Admin;
+import model.RoomModel;
 
 /**
  *
  * @author Jess
  */
-public class admin extends HttpServlet {
+public class room extends HttpServlet {
 
+    public room (){
+        super();
+    }
+    
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException, InstantiationException, IllegalAccessException, SQLException, InterruptedException {
-        Admin ad = new Admin();
-        String _email = request.getParameter("email");
-        String _email1 = request.getParameter("email1");
-        String _email2 = request.getParameter("email2");
-        String _pass = request.getParameter("pass");
-        String _pass1 = request.getParameter("pass1");
+        
+        RoomModel rm = new RoomModel();
+        String _roomName = request.getParameter("name");
+        String _roomNum = request.getParameter("number");
+        String _roomType = request.getParameter("type");
         
         response.setContentType("text/html;charset=UTF-8");
-        try (PrintWriter out = response.getWriter()) {
-            if(_email != null && _email1 != null && _email2 != null && _pass != null && _pass1 != null){
-                if(_email1.equals(_email2) && _pass.equals(_pass1)){
-                    ad.createAdminUser(_email1); 
-                    TimeUnit.SECONDS.sleep(5);
-                    response.sendRedirect("Admin-Dashboard.jsp");
-                }
-                else{
-                    TimeUnit.SECONDS.sleep(5);
-                    out.println("User was not added, please try again...");
-                }   
+        try ( PrintWriter out = response.getWriter()) {
+            if(_roomName != null && _roomNum != null && _roomType != null){
+                rm.createNewRoom(_roomNum, _roomType, "", _roomName);
+                out.println("Room created successfully.....");
+                TimeUnit.SECONDS.sleep(5);
+                response.sendRedirect("Admin-Dashboard.jsp");
             }
+            else
+                out.println("Error entering data, refresh page and try again.");
         }
     }
-
+    
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         try {
             processRequest(request, response);
         } catch (InstantiationException | IllegalAccessException | SQLException | InterruptedException ex) {
-            Logger.getLogger(admin.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(room.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
 
@@ -64,7 +64,7 @@ public class admin extends HttpServlet {
         try {
             processRequest(request, response);
         } catch (InstantiationException | IllegalAccessException | SQLException | InterruptedException ex) {
-            Logger.getLogger(admin.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(room.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
 

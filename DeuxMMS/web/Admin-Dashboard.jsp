@@ -75,21 +75,18 @@
 </g></svg></span>
                       <h3 class="u-custom-font u-font-pt-sans u-text u-text-body-color u-text-3">Create Room</h3>
                       <div class="u-form u-form-1">
-                        <form action="#" method="post" class="u-clearfix u-form-custom-backend u-form-spacing-10 u-form-vertical u-inner-form" source="custom" name="form-2" style="padding: 10px;">
-                          <div class="u-form-group u-form-select u-form-group-1">
-                            <label for="select-4892" class="u-form-control-hidden u-label"></label>
-                            <div class="u-form-select-wrapper">
-                              <select id="select-4892" name="select" class="u-border-1 u-border-grey-30 u-input u-input-rectangle u-white">
-                                <option value="Item 1">Item 1</option>
-                                <option value="Item 2">Item 2</option>
-                                <option value="Item 3">Item 3</option>
-                              </select>
-                              <svg xmlns="http://www.w3.org/2000/svg" width="14" height="12" version="1" class="u-caret"><path fill="currentColor" d="M4 8L0 4h8z"></path></svg>
-                            </div>
-                          </div>
+                        <form action="room" method="post" class="u-clearfix u-form-custom-backend u-form-spacing-10 u-form-vertical u-inner-form" source="custom" name="form-2" style="padding: 10px;">
                           <div class="u-form-group u-form-name u-form-group-2">
                             <label for="name-0023" class="u-form-control-hidden u-label"></label>
                             <input type="text" placeholder="Room Name" id="name-0023" name="name" class="u-border-1 u-border-grey-30 u-input u-input-rectangle u-white" required="">
+                          </div>
+                          <div class="u-form-group u-form-name u-form-group-2">
+                            <label for="name-0024" class="u-form-control-hidden u-label"></label>
+                            <input type="text" placeholder="Room Type" id="name-0023" name="type" class="u-border-1 u-border-grey-30 u-input u-input-rectangle u-white" required="">
+                          </div>
+                          <div class="u-form-group u-form-name u-form-group-2">
+                            <label for="name-0025" class="u-form-control-hidden u-label"></label>
+                            <input type="text" placeholder="Room Number" id="name-0023" name="number" class="u-border-1 u-border-grey-30 u-input u-input-rectangle u-white" required="">
                           </div>
                           <div class="u-align-center u-form-group u-form-submit">
                             <a href="#" class="u-btn u-btn-submit u-button-style">Submit</a>
@@ -176,19 +173,23 @@
                         <form action="admin" method="post" class="u-clearfix u-form-custom-backend u-form-spacing-10 u-form-vertical u-inner-form" source="custom" name="form-1" style="padding: 10px;">
                           <div class="u-form-group u-form-name">
                             <label for="name-a6ff" class="u-form-control-hidden u-label"></label>
-                            <input type="text" placeholder="Name" id="name-a6ff" name="name" class="u-border-1 u-border-grey-30 u-input u-input-rectangle u-white" required="">
+                            <input type="text" placeholder="Your Email Address" id="name-a6ff" name="email" class="u-border-1 u-border-grey-30 u-input u-input-rectangle u-white" required="">
                           </div>
                           <div class="u-form-email u-form-group">
                             <label for="email-a6ff" class="u-form-control-hidden u-label"></label>
-                            <input type="text" placeholder="Enter a valid email address" id="email-a6ff" name="email" class="u-border-1 u-border-grey-30 u-input u-input-rectangle u-white" required="">
+                            <input type="text" placeholder="Email Address of New Admin" id="email-a6ff" name="email1" class="u-border-1 u-border-grey-30 u-input u-input-rectangle u-white" required="">
+                          </div>
+                          <div class="u-form-email u-form-group">
+                            <label for="email-b6ff" class="u-form-control-hidden u-label"></label>
+                            <input type="text" placeholder="Confirm New Admin Email Address" id="email-a6ff" name="email2" class="u-border-1 u-border-grey-30 u-input u-input-rectangle u-white" required="">
                           </div>
                           <div class="u-form-group u-form-group-12">
                             <label for="text-3922" class="u-form-control-hidden u-label"></label>
-                            <input type="text" placeholder="Password" id="text-3922" name="text" class="u-border-1 u-border-grey-30 u-input u-input-rectangle u-white">
+                            <input type="text" placeholder="Your Password" id="text-3922" name="pass" class="u-border-1 u-border-grey-30 u-input u-input-rectangle u-white">
                           </div>
                           <div class="u-form-group u-form-group-13">
                             <label for="text-d133" class="u-form-control-hidden u-label"></label>
-                            <input type="text" placeholder="Confirm Password" id="text-d133" name="text1" class="u-border-1 u-border-grey-30 u-input u-input-rectangle u-white">
+                            <input type="text" placeholder="Confirm Your Password" id="text-d133" name="pass1" class="u-border-1 u-border-grey-30 u-input u-input-rectangle u-white">
                           </div>
                           <div class="u-align-center u-form-group u-form-submit">
                             <a href="#" class="u-btn u-btn-submit u-button-style">Submit</a>

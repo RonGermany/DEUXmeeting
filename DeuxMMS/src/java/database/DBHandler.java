@@ -104,8 +104,8 @@ public class DBHandler {
     }
 
     public boolean authenticateUser(String email, String pass) {
-        String user = "";
-        String password = "";
+        String user;
+        String password;
         String checkUser = "SELECT EMAIL, PASSWORD FROM USERS WHERE EMAIL= '" + email + "'";
 
         ResultSet res = executeQuery(checkUser);
@@ -121,24 +121,23 @@ public class DBHandler {
             }
         } catch (SQLException ex) {
             System.out.println("Error authenticating user.");
-            System.out.println("I am coming from here");
         }
         return status;
     }
+    public void createRoom(String query) throws SQLException{
+        stmt = conn.createStatement();
+        stmt.executeUpdate(query);
+    }
     
     /*two methods to create users*/
-    public void createAminUser(String name, String email, String pass, String address, String phone, String ccNum, String exp, String ccv){
-        String meeting = "";    //default place holder
-        String insertAdmin = "INSERT INTO APP.USERS VALUES ('" + email + "', '" + pass + "', '" + name + "', '" + address + "', '" + phone + "', '" + "A" + "', " + ccNum + "', " + exp + "'," + ccv + "'," + "'" + meeting + "'" + ")"; 
-    
-        if(executeAction(insertAdmin)){
-            //do something to let user know successful
-        }
+    public void createAdminUser(String query) throws SQLException{
+        stmt = conn.createStatement();
+        stmt.executeUpdate(query);            
     }
     
     public void createClientUser(String name, String email, String pass, String address, String phone, String ccNum, String exp, String ccv){
         String meeting = "";    //default place holder
-        String insertClient = "INSERT INTO APP.USERS VALUES ('" + email + "', '" + pass + "', '" + name + "', '" + address + "', '" + phone + "', '" + "C" + "', " + ccNum + "', " + exp + "'," + ccv + "'," + "'" + meeting + "'" + ")";
+        String insertClient = "INSERT INTO USERS VALUES ('" + email + "', '" + pass + "', '" + name + "', '" + address + "', '" + phone + "', '" + "C" + "', " + ccNum + "', " + exp + "'," + ccv + "'," + "'" + meeting + "'" + ")";
     
         if(executeAction(insertClient)){
             //do something to let user know successful

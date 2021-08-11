@@ -22,7 +22,7 @@ import model.LoginModel;
  */
 public class login extends HttpServlet {
     public login(){
-        
+        super();
     }
     
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
@@ -36,7 +36,6 @@ public class login extends HttpServlet {
         response.setContentType("text/html;charset=UTF-8");
         try (PrintWriter out = response.getWriter()) {
             if(_username != null && _password != null){
-                //response.sendRedirect("Admin-Dashboard.jsp");
                 if(type.equals("A")){
                     response.sendRedirect("Admin-Dashboard.jsp");
                 }
@@ -46,8 +45,8 @@ public class login extends HttpServlet {
                 else
                     response.sendRedirect("index.jsp");
             }
-            //else
-                //out.println("Empty username or password field");
+            else
+                out.println("Incorrect username or password");
 
         }
     }
