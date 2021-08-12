@@ -52,9 +52,6 @@ public class DBHandler {
             System.out.println("Exception at executeQuery:dataHandler --> ERROR: " + ex.getLocalizedMessage());
             return null;
         }
-        finally {
-        }
-        
         return result;
     }
     

@@ -28,6 +28,10 @@
         <servlet-name>showcomplaint</servlet-name>
         <servlet-class>controller.showcomplaint</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>getcomplaints</servlet-name>
+        <servlet-class>controller.getcomplaints</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>admin</servlet-name>
         <url-pattern>/admin</url-pattern>
@@ -71,6 +75,10 @@
     <servlet-mapping>
         <servlet-name>showcomplaint</servlet-name>
         <url-pattern>/showcomplaint</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>getcomplaints</servlet-name>
+        <url-pattern>/getcomplaints</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>

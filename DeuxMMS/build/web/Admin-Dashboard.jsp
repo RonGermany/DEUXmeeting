@@ -225,7 +225,7 @@
                         </li>
                       </ul>
                       <div class="u-form u-form-5">
-                        <form action="#" method="POST" class="u-clearfix u-form-spacing-10 u-form-vertical u-inner-form" source="custom" name="form" style="padding: 10px;">
+                        <form action="getcomplaint" method="post" class="u-clearfix u-form-spacing-10 u-form-vertical u-inner-form" source="custom" name="form" style="padding: 10px;">
                           <div class="u-form-group u-form-message">
                             <label for="message-81bd" class="u-form-control-hidden u-label"></label>
                             <textarea placeholder="Enter your message" rows="4" cols="50" id="message-81bd" name="message" class="u-border-1 u-border-grey-30 u-input u-input-rectangle u-white" required=""></textarea>
