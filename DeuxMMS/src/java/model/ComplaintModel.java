@@ -47,11 +47,12 @@ public class ComplaintModel {
     public List<Complaint> getComplaintList() throws SQLException{
         List<Complaint> list = new ArrayList<Complaint>();
         
-        String complaintQuery = "SELECT NAME, EMAIL, MESSAGE FROM COMPLAINTS";
+        String complaintQuery = "SELECT * FROM COMPLAINTS";
         list = dbHandler.getComplaints(complaintQuery);
   
         return list;
     }
+    
     public void addComplaint(String name, String email, String message) throws SQLException{
         int i = 0;
         String countComplaints = "SELECT COUNT(*) FROM COMPLAINTS";

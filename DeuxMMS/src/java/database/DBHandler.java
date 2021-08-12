@@ -114,11 +114,7 @@ public class DBHandler {
             while (res.next()) {
                 user = res.getString("EMAIL");
                 password = res.getString("PASSWORD");
-                if (user.equals(email) && password.equals(pass)) {
-                    status = true;
-                } else {
-                    status = false;
-                }
+                status = user.equals(email) && password.equals(pass);
             }
         } catch (SQLException ex) {
             System.out.println("Error authenticating user.");
@@ -171,12 +167,11 @@ public class DBHandler {
         ResultSet rs = executeQuery(query);
         
         while(rs.next()){
-            Complaint c = new Complaint();
-            c.setIDNum(rs.getString("ID"));
-            c.setName(rs.getString("NAME"));
-            c.setEmail(rs.getString("EMAIL"));
-            c.setMessage(rs.getString("MESSAGE"));
-            
+            int id = rs.getInt("ID");
+            String name = rs.getString("NAME");
+            String email = rs.getString("EMAIL");
+            String msg = rs.getString("MESSAGE");
+            Complaint c = new Complaint(id,name,email,msg);
             list.add(c);
         }
         return list;

@@ -74,7 +74,7 @@
                     <div class="u-container-layout u-container-layout-1"><span class="u-icon u-icon-circle u-palette-1-light-1 u-spacing-12 u-text-black u-icon-1"><svg class="u-svg-link" preserveAspectRatio="xMidYMin slice" viewBox="0 0 511 511" style=""><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#svg-db37"></use></svg><svg class="u-svg-content" viewBox="0 0 511 511" id="svg-db37"><g><path d="m465.5 98.787-98.787-98.787h-261.213v61h-60v450h360v-61h60zm-90-47.574 39.787 39.787h-39.787zm0 429.787h-300v-390h30v359h270zm-240-61v-390h210v91h90v299z"></path><path d="m284.5 150c-66.168 0-120 53.832-120 120s53.832 120 120 120 120-53.832 120-120-53.832-120-120-120zm0 210c-49.626 0-90-40.374-90-90s40.374-90 90-90 90 40.374 90 90-40.374 90-90 90z"></path><path d="m299.5 209.5h-30v45h-45v30h45v45h30v-45h45v-30h-45z"></path>
 </g></svg></span>
                       <h3 class="u-custom-font u-font-pt-sans u-text u-text-body-color u-text-default u-text-3">Create Meeting</h3>
-                      <a href="https://nicepage.com/c/about-us-html-templates" class="u-active-grey-40 u-border-none u-btn u-btn-round u-button-style u-grey-15 u-hover-white u-radius-50 u-btn-1">New Meeting</a>
+                      <a href="Create-Meeting.jsp" class="u-active-grey-40 u-border-none u-btn u-btn-round u-button-style u-grey-15 u-hover-white u-radius-50 u-btn-1">New Meeting</a>
                     </div>
                   </div>
                   <div class="u-align-center u-container-style u-custom-color-3 u-layout-cell u-opacity u-opacity-70 u-radius-20 u-shape-round u-size-20 u-layout-cell-2">
@@ -82,7 +82,7 @@
 </g>
 </g></svg></span>
                       <h3 class="u-custom-font u-font-pt-sans u-text u-text-body-color u-text-default u-text-4">Display Meeting</h3>
-                      <a href="https://nicepage.com/c/about-us-html-templates" class="u-active-grey-40 u-border-none u-btn u-btn-round u-button-style u-grey-15 u-hover-white u-radius-50 u-btn-2">View My Meetings</a>
+                      <a href="Display-Meeting.jsp" class="u-active-grey-40 u-border-none u-btn u-btn-round u-button-style u-grey-15 u-hover-white u-radius-50 u-btn-2">View My Meetings</a>
                     </div>
                   </div>
                   <div class="u-align-center u-container-style u-layout-cell u-opacity u-opacity-70 u-palette-3-light-1 u-radius-20 u-shape-round u-size-20 u-layout-cell-3">
@@ -91,7 +91,7 @@
 </g>
 </g></svg></span>
                       <h3 class="u-custom-font u-font-pt-sans u-text u-text-default u-text-5">Edit Meeting</h3>
-                      <a href="https://nicepage.com/c/about-us-html-templates" class="u-active-grey-40 u-border-none u-btn u-btn-round u-button-style u-grey-15 u-hover-white u-radius-50 u-btn-3">New Meeting</a>
+                      <a href="Edit-Meeting.jsp" class="u-active-grey-40 u-border-none u-btn u-btn-round u-button-style u-grey-15 u-hover-white u-radius-50 u-btn-3">New Meeting</a>
                     </div>
                   </div>
                 </div>
@@ -104,7 +104,7 @@
 </g>
 </g></svg></span>
                       <h3 class="u-custom-font u-font-pt-sans u-text u-text-body-color u-text-default u-text-6">Scheduled Meetings</h3>
-                      <a href="https://nicepage.com/c/about-us-html-templates" class="u-active-grey-40 u-border-none u-btn u-btn-round u-button-style u-grey-15 u-hover-white u-radius-50 u-btn-4">view scheduled</a>
+                      <a href="User-Schedule.jsp" class="u-active-grey-40 u-border-none u-btn u-btn-round u-button-style u-grey-15 u-hover-white u-radius-50 u-btn-4">view schedule</a>
                     </div>
                   </div>
                   <div class="u-align-center u-container-style u-custom-color-4 u-layout-cell u-opacity u-opacity-70 u-radius-20 u-shape-round u-size-40 u-layout-cell-5">

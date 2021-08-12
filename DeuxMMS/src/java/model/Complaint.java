@@ -10,13 +10,20 @@ package model;
  * @author Jess
  */
 public class Complaint {
-    private String idNum;
+    private int id;
     private String name;
     private String email;
     private String message;
     
-    public void setIDNum(String idNum){
-        this.idNum = idNum;
+    public Complaint(int id, String name, String email, String msg){
+        this.id = id;
+        this.name = name;
+        this.email = email;
+        this.message = msg;
+    }
+    
+    public void setIDNum(int idNum){
+        this.id = idNum;
     }
     public void setEmail(String email){
         this.email = email;

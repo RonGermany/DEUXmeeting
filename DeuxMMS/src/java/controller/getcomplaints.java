@@ -28,23 +28,14 @@ public class getcomplaints extends HttpServlet {
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException, InstantiationException, IllegalAccessException, SQLException {
         ComplaintModel cm = new ComplaintModel();
-        List<Complaint> list = new ArrayList<Complaint>();
-        String msg = request.getParameter("message");
+        //String msg = request.getParameter("message");
+        
         response.setContentType("text/html;charset=UTF-8");
         try ( PrintWriter out = response.getWriter()) {
-            String action = request.getParameter("action");
-            if(action.equals("list")){
-                list = cm.getComplaintList();
-            }
-            String listMsg = "no data";
-            if(list.size() > 0){
-                listMsg = list.size() + (list.size() > 1 ? " complaints" : " complaint");
-            }
-            request.setAttribute("MSG", listMsg);
-            request.setAttribute("list", list);
-            
-            request.getRequestDispatcher("Admin-Dashboard.jsp");
-            
+            List<Complaint> list = cm.getComplaintList();                      
+
+            request.setAttribute("list", list);            
+            request.getRequestDispatcher("Admin-Dashboard.jsp").forward(request, response);  
         }
     }
 
