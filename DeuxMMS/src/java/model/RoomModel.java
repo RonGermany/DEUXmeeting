@@ -42,6 +42,11 @@ public class RoomModel {
         dbHandler.createRoom(assembleQuery);
     }
     
+    public void deleteRoom(String roomNum) throws SQLException{
+        String deleteRoom = "DELETE FROM ROOMS WHERE ROOMNUM='" + roomNum + "' AND MEETINGID='NULL'";
+        dbHandler.removeRoom(deleteRoom);
+    }
+    
     private boolean authenticateRoom(){
         return status;
     }

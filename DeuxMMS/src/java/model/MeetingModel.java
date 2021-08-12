@@ -5,13 +5,19 @@
  */
 package model;
 
+import database.DBHandler;
+import java.sql.SQLException;
 import java.util.Date;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 /**
  *
  * @author Jess
  */
 public class MeetingModel {
+    
+    public DBHandler dbHandler;
     
     private User user;
     private String meetConfirm = "Your meeting has been scheduled.";
@@ -22,12 +28,29 @@ public class MeetingModel {
     private String display = "Meetings for you are as follows: ";
     
     //constructor
-    public MeetingModel(){
-        
+    public MeetingModel()throws InstantiationException, IllegalAccessException{
+        try {
+            dbHandler = new DBHandler();
+        } catch (SQLException ex) {
+            Logger.getLogger(LoginModel.class.getName()).log(Level.SEVERE, null, ex);
+        }     
     }
     
-    public String createMeeting(User user){
-        return meetConfirm;
+    public void createMeeting(String user, String name, String date, String time, String duration, String room) throws SQLException{
+        int i = 0;
+        int start, end, dur;
+        start = Integer.parseInt(time);
+        dur = Integer.parseInt(duration);
+        if(dur > 60){
+            dur = 60;
+            end = start + 60;
+        }
+        String countMeetings = "SELECT COUNT(*) FROM MEETING";
+        i = dbHandler.getCount(countMeetings);
+        i++;
+        String meetingQuery = "INSERT INTO MEETING (ID, NAME, ROOMNUM, CREATOR, STARTTIME, ENDTIME, DURATION, DATE) VALUES "
+                + "(" + i + ", '" + name + "', '" + room + "', '" + user + "'" + ")";
+        dbHandler.newMeeting(meetingQuery);
     }
     
     private boolean authenticateMeeting(){

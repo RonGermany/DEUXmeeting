@@ -147,6 +147,11 @@ public class DBHandler {
         stmt.executeUpdate(query);
     }
     
+    public void removeRoom(String query) throws SQLException{
+        stmt = conn.createStatement();
+        stmt.executeUpdate(query);        
+    }
+    
     public int getCount(String query) throws SQLException{
         ResultSet res = executeQuery(query);
         res.next();
@@ -175,6 +180,10 @@ public class DBHandler {
             list.add(c);
         }
         return list;
+    }
+
+    public void newMeeting(String query) {
+        
     }
     
     

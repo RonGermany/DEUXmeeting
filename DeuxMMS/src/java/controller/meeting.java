@@ -11,6 +11,10 @@ import jakarta.servlet.ServletException;
 import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
+import java.sql.SQLException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+import model.MeetingModel;
 
 /**
  *
@@ -19,24 +23,40 @@ import jakarta.servlet.http.HttpServletResponse;
 public class meeting extends HttpServlet {
 
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
-            throws ServletException, IOException {
+            throws ServletException, IOException, SQLException, InstantiationException, IllegalAccessException {
+        MeetingModel mm = new MeetingModel();
+        
+        String _user = request.getParameter("user");
+        String _name = request.getParameter("name");
+        String _date = request.getParameter("date");
+        String _time = request.getParameter("time");
+        String _room = request.getParameter("select");
+        String _duration = request.getParameter("duration");
         
         response.setContentType("text/html;charset=UTF-8");
         try (PrintWriter out = response.getWriter()) {
-
+            mm.createMeeting(_name, _room, _user, _time, _duration, _date);
         }
     }
 
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        processRequest(request, response);
+        try {
+            processRequest(request, response);
+        } catch (SQLException | InstantiationException | IllegalAccessException ex) {
+            Logger.getLogger(meeting.class.getName()).log(Level.SEVERE, null, ex);
+        }
     }
 
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        processRequest(request, response);
+        try {
+            processRequest(request, response);
+        } catch (SQLException | InstantiationException | IllegalAccessException ex) {
+            Logger.getLogger(meeting.class.getName()).log(Level.SEVERE, null, ex);
+        }
     }
 
 }

@@ -29,6 +29,7 @@
     <meta property="og:description" content="">
     <meta property="og:type" content="website">
   </head>
+  <body onload="myFunction()"></body>
   <body class="u-body"><header class="u-clearfix u-custom-color-5 u-header u-header" id="sec-6a01"><div class="u-clearfix u-sheet u-sheet-1">
         <h1 class="u-text u-text-default u-text-1">DEUX MMS<br>
         </h1>
@@ -139,25 +140,15 @@
 </g></svg></span>
                       <h3 class="u-custom-font u-font-pt-sans u-text u-text-body-color u-text-5">Delete Room</h3>
                       <div class="u-form u-form-3">
-                        <form action="#" method="POST" class="u-clearfix u-form-spacing-10 u-form-vertical u-inner-form" source="custom" name="form-3" style="padding: 10px;">
-                          <div class="u-form-group u-form-select u-form-group-8">
-                            <label for="select-695f" class="u-form-control-hidden u-label"></label>
-                            <div class="u-form-select-wrapper">
-                              <select id="select-695f" name="select" class="u-border-1 u-border-grey-30 u-input u-input-rectangle u-white">
-                                  <c:forEach items="${list}" var="select">
-                                      <option value="${complaint.id}">${complaint.email}</option>
-                                  </c:forEach>
-                              </select>
-                              <svg xmlns="http://www.w3.org/2000/svg" width="14" height="12" version="1" class="u-caret"><path fill="currentColor" d="M4 8L0 4h8z"></path></svg>
-                            </div>
-                          </div>
+                        <form action="deleteroom" method="post" class="u-clearfix u-form-spacing-10 u-form-vertical u-inner-form" source="custom" name="form-3" style="padding: 10px;">
+                          <div class="u-form-group u-form-name u-form-group-2">
+                            <label for="name-0025" class="u-form-control-hidden u-label"></label>
+                            <input type="text" placeholder="Room Number" id="name-0023" name="number" class="u-border-1 u-border-grey-30 u-input u-input-rectangle u-white" required="">
+                          </div>                              
                           <div class="u-align-center u-form-group u-form-submit">
                             <a href="#" class="u-btn u-btn-submit u-button-style">Submit</a>
                             <input type="submit" value="submit" class="u-form-control-hidden">
                           </div>
-                          <div class="u-form-send-message u-form-send-success"> Thank you! Your message has been sent. </div>
-                          <div class="u-form-send-error u-form-send-message"> Unable to send your message. Please fix errors then try again. </div>
-                          <input type="hidden" value="" name="recaptchaResponse">
                         </form>
                       </div>
                     </div>
@@ -208,13 +199,14 @@
 </g></svg></span>
                       <h3 class="u-align-center u-custom-font u-font-pt-sans u-text u-text-body-color u-text-7">Manage Complaints</h3>
                       <div class="u-form u-form-5">
+                          <form action = "#" method="post"></form>
                         <form action="getcomplaints" method="get" class="u-clearfix u-form-spacing-10 u-form-vertical u-inner-form" source="custom" name="form" style="padding: 10px;">
                             <p>Select a Complaint to Manage:</p>
                             <select id="select-695f" name="complaint" class="u-border-1 u-border-grey-30 u-input u-input-rectangle u-white">
-                                <option value ="">Select a complaint to respond to...
-                                <c:forEach items="${list}" var="Complaint">
-                                    <option value="${Complaint.idNum}">${Complaint.name}</option>
-                                </c:forEach>
+                                <option value ="">Select a complaint to respond to...</option>
+                                <c:foreach items="${list}" var="Complaint">
+                                    <option value="${Complaint.id}">${Complaint.email}</option>
+                                </c:foreach>
                             </select>
                                 <p>Type response below:</p>
                             <div class="u-form-group u-form-message">
@@ -225,9 +217,6 @@
                             <a href="#" class="u-btn u-btn-submit u-button-style">Submit</a>
                             <input type="submit" value="submit" class="u-form-control-hidden">
                           </div>
-                          <div class="u-form-send-message u-form-send-success"> Thank you! Your message has been sent. </div>
-                          <div class="u-form-send-error u-form-send-message"> Unable to send your message. Please fix errors then try again. </div>
-                          <input type="hidden" value="" name="recaptchaResponse">
                         </form>
                       </div>
                     </div>

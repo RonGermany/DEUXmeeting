@@ -162,33 +162,38 @@
           </div>
         </div>
         <div class="u-form u-form-2">
-          <form action="#" method="POST" class="u-clearfix u-form-spacing-10 u-form-vertical u-inner-form" source="custom" name="form" style="padding: 10px;">
+          <form action="meeting" method="POST" class="u-clearfix u-form-spacing-10 u-form-vertical u-inner-form" source="custom" name="form" style="padding: 10px;">
             <div class="u-form-group u-form-name">
+              <label for="name-d4df" class="u-form-control-hidden u-label"></label>
+              <input type="text" placeholder="Enter your name" id="name-d4df" name="user" class="u-border-1 u-border-grey-30 u-input u-input-rectangle u-white" required="">
+            </div>
+              <div class="u-form-group u-form-name">
               <label for="name-d4df" class="u-form-control-hidden u-label"></label>
               <input type="text" placeholder="Enter meeting name" id="name-d4df" name="name" class="u-border-1 u-border-grey-30 u-input u-input-rectangle u-white" required="">
             </div>
+              <p>Meeting hours are from 9am to 5pm M-F</p>
             <div class="u-form-date u-form-group u-form-group-9">
               <label for="date-66d3" class="u-form-control-hidden u-label"></label>
               <input type="date" placeholder="MM/DD/YYYY" id="date-66d3" name="date" class="u-border-1 u-border-grey-30 u-input u-input-rectangle u-white" required="">
             </div>
             <div class="u-form-group u-form-group-10">
               <label for="text-6f74" class="u-form-control-hidden u-label"></label>
-              <input type="text" placeholder="Time" id="text-6f74" name="text-1" class="u-border-1 u-border-grey-30 u-input u-input-rectangle u-white">
+              <input type="time" min="09:00" max="17:00" id="text-6f74" name="time" class="u-border-1 u-border-grey-30 u-input u-input-rectangle u-white" required="">
+            </div>
+            <div class="u-form-group u-form-group-10">
+              <label for="text-6f75" class="u-form-control-hidden u-label"></label>
+              <input type="text" placeholder="Duration" id="text-6f74" name="duration" class="u-border-1 u-border-grey-30 u-input u-input-rectangle u-white" required="">
             </div>
             <div class="u-form-group u-form-select u-form-group-11">
               <label for="select-f257" class="u-form-control-hidden u-label"></label>
               <div class="u-form-select-wrapper">
                 <select id="select-f257" name="select" class="u-border-1 u-border-grey-30 u-input u-input-rectangle u-white">
-                  <option value="Item 1">Item 1</option>
-                  <option value="Item 2">Item 2</option>
-                  <option value="Item 3">Item 3</option>
+                  <option value="Room 1">Room 1</option>
+                  <option value="Room 2">Room 2</option>
+                  <option value="Room 3">Room 3</option>
                 </select>
                 <svg xmlns="http://www.w3.org/2000/svg" width="14" height="12" version="1" class="u-caret"><path fill="currentColor" d="M4 8L0 4h8z"></path></svg>
               </div>
-            </div>
-            <div class="u-form-group u-form-group-12">
-              <label for="text-4d81" class="u-form-control-hidden u-label"></label>
-              <input type="text" placeholder="Room reservation fee" id="text-4d81" name="text" class="u-border-1 u-border-grey-30 u-input u-input-rectangle u-white">
             </div>
             <div class="u-form-agree u-form-group u-form-group-13">
               <input type="checkbox" id="agree-6413" name="agree" class="u-agree-checkbox" required="">
