@@ -174,7 +174,7 @@
               <p>Meeting hours are from 9am to 5pm M-F</p>
             <div class="u-form-date u-form-group u-form-group-9">
               <label for="date-66d3" class="u-form-control-hidden u-label"></label>
-              <input type="date" placeholder="MM/DD/YYYY" id="date-66d3" name="date" class="u-border-1 u-border-grey-30 u-input u-input-rectangle u-white" required="">
+              <input type="text" placeholder="MM/DD/YYYY" id="date-66d3" name="date" class="u-border-1 u-border-grey-30 u-input u-input-rectangle u-white" required="">
             </div>
             <div class="u-form-group u-form-group-10">
               <label for="text-6f74" class="u-form-control-hidden u-label"></label>
@@ -189,9 +189,9 @@
               <label for="select-f257" class="u-form-control-hidden u-label"></label>
               <div class="u-form-select-wrapper">
                 <select id="select-f257" name="select" class="u-border-1 u-border-grey-30 u-input u-input-rectangle u-white">
-                  <option value="Room 1">Room 1</option>
-                  <option value="Room 2">Room 2</option>
-                  <option value="Room 3">Room 3</option>
+                  <option value="1234">Room 1234</option>
+                  <option value="4567">Room 4567</option>
+                  <option value="7890">Room 7890</option>
                 </select>
                 <svg xmlns="http://www.w3.org/2000/svg" width="14" height="12" version="1" class="u-caret"><path fill="currentColor" d="M4 8L0 4h8z"></path></svg>
               </div>

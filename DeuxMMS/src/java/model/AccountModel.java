@@ -7,6 +7,8 @@ package model;
 
 import database.DBHandler;
 import java.sql.SQLException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 /**
  *
@@ -14,15 +16,19 @@ import java.sql.SQLException;
  */
 public class AccountModel {
     
-    private DBHandler dbHandler;
+    public DBHandler dbHandler;
     
     private User user;
     private String confirm = "Your account has been successfully created.";
     private boolean status = false;
     
    //constructor
-    public AccountModel(){
-        
+    public AccountModel()throws InstantiationException, IllegalAccessException{
+        try {
+            dbHandler = new DBHandler();
+        } catch (SQLException ex) {
+            Logger.getLogger(LoginModel.class.getName()).log(Level.SEVERE, null, ex);
+        }     
     }
     
     public void addUser(String email, String password, String name, String address, String phone, String ccNum, String ccExp, String ccv) throws SQLException{

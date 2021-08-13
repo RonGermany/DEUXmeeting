@@ -36,7 +36,7 @@ public class meeting extends HttpServlet {
         
         response.setContentType("text/html;charset=UTF-8");
         try (PrintWriter out = response.getWriter()) {
-            mm.createMeeting(_name, _room, _user, _hour, _min, _duration, _date);
+            mm.createMeeting(_user, _name, _date, _hour, _min, _duration, _room);
             response.sendRedirect("User-Dashboard.jsp");
         }
     }
