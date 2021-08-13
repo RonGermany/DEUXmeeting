@@ -178,7 +178,8 @@
             </div>
             <div class="u-form-group u-form-group-10">
               <label for="text-6f74" class="u-form-control-hidden u-label"></label>
-              <input type="time" min="09:00" max="17:00" id="text-6f74" name="time" class="u-border-1 u-border-grey-30 u-input u-input-rectangle u-white" required="">
+              <input type="text" min="09" max="17" placeholder="Hour" id="text-6f74" name="hour" class="u-border-1 u-border-grey-30 u-input u-input-rectangle u-white" required="">
+              <input type="text" min="00" max="59" placeholder="Minutes" id="text-6f74" name="minutes" class="u-border-1 u-border-grey-30 u-input u-input-rectangle u-white" required="">
             </div>
             <div class="u-form-group u-form-group-10">
               <label for="text-6f75" class="u-form-control-hidden u-label"></label>
@@ -203,9 +204,6 @@
               <a href="#" class="u-btn u-btn-submit u-button-style u-text-grey-80">Submit</a>
               <input type="submit" value="submit" class="u-form-control-hidden">
             </div>
-            <div class="u-form-send-message u-form-send-success"> Thank you! Your message has been sent. </div>
-            <div class="u-form-send-error u-form-send-message"> Unable to send your message. Please fix errors then try again. </div>
-            <input type="hidden" value="" name="recaptchaResponse">
           </form>
         </div>
       </div>

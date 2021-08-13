@@ -36,20 +36,38 @@ public class MeetingModel {
         }     
     }
     
-    public void createMeeting(String user, String name, String date, String time, String duration, String room) throws SQLException{
+    public void createMeeting(String user, String name, String date, String hour, String min,  String duration, String room) throws SQLException{
         int i = 0;
-        int start, end, dur;
-        start = Integer.parseInt(time);
+        int hours, minute, dur;
+        String startHour = hour;
+        String startMin = min;
+        String endHour, endMin, meetDur;
+        minute = Integer.parseInt(min);
+        hours = Integer.parseInt(hour);
         dur = Integer.parseInt(duration);
         if(dur > 60){
             dur = 60;
-            end = start + 60;
         }
+        if(dur == 60){
+            hours++;
+        }
+        else if(dur < 60){
+            minute += dur;
+            if(minute >= 60){
+                hours++;
+                minute -= 60;
+            }
+        }
+        endMin = String.valueOf(minute);
+        endHour = String.valueOf(hours);
+        meetDur = String.valueOf(dur);
         String countMeetings = "SELECT COUNT(*) FROM MEETING";
         i = dbHandler.getCount(countMeetings);
         i++;
+        String id = String.valueOf(i);
         String meetingQuery = "INSERT INTO MEETING (ID, NAME, ROOMNUM, CREATOR, STARTTIME, ENDTIME, DURATION, DATE) VALUES "
-                + "(" + i + ", '" + name + "', '" + room + "', '" + user + "'" + ")";
+                + "('" + id + "', '" + name + "', '" + room + "', '" + user + "', '" + startHour + ":" + startMin + "', '"
+                + endHour + ":" + endMin + "', '" + meetDur + "', '" + date + "'" + ")";
         dbHandler.newMeeting(meetingQuery);
     }
     

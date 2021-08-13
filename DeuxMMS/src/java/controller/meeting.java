@@ -28,14 +28,16 @@ public class meeting extends HttpServlet {
         
         String _user = request.getParameter("user");
         String _name = request.getParameter("name");
-        String _date = request.getParameter("date");
-        String _time = request.getParameter("time");
+        String _date = request.getParameter("date").toString();
+        String _hour = request.getParameter("hour");
+        String _min = request.getParameter("minutes");
         String _room = request.getParameter("select");
         String _duration = request.getParameter("duration");
         
         response.setContentType("text/html;charset=UTF-8");
         try (PrintWriter out = response.getWriter()) {
-            mm.createMeeting(_name, _room, _user, _time, _duration, _date);
+            mm.createMeeting(_name, _room, _user, _hour, _min, _duration, _date);
+            response.sendRedirect("User-Dashboard.jsp");
         }
     }
 
