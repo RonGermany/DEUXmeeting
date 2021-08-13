@@ -182,7 +182,5 @@ public class DBHandler {
 
     public void newMeeting(String query) {
         
-    }
-    
-    
+    } 
 }
