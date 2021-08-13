@@ -44,14 +44,12 @@ public class profile extends HttpServlet {
         
         response.setContentType("text/html;charset=UTF-8");
         try ( PrintWriter out = response.getWriter()) {
-            if(_name != null && _email != null && _pass != null && _address != null && _phone != null){
-                if(_email.equals(_email1) && _pass.equals(_pass1)){
+            if((_name != null && _email != null && _pass != null && _address != null && _phone != null) && (_email.equals(_email1) && _pass.equals(_pass1))){
                     am.addUser(_email, _pass, _name, _address, _phone, _ccnum, _ccexp, _ccv);
                     TimeUnit.SECONDS.sleep(5);
                     response.sendRedirect("index.jsp");
                 }
             }
-        }
     }
 
     @Override
