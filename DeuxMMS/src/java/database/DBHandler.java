@@ -66,8 +66,6 @@ public class DBHandler {
             System.out.println("Exception at executeQuery:dataHandler  --> ERROR: " + ex.getLocalizedMessage());
             return false;
         }
-        finally {
-        }
     }    
     //Get user name from database by using login information. This will carry throughout the session for ID purposes.
     //This is how a typical query should look...
@@ -185,5 +183,13 @@ public class DBHandler {
             list.add(c);
         }
         return list;
+<<<<<<< HEAD
     }  
+=======
+    }
+
+    public void newMeeting(String query) {
+        
+    } 
+>>>>>>> 6e848a36c939c4aed68367016ddbc8630593e248
 }
